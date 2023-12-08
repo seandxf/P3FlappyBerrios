@@ -8,13 +8,13 @@ public class flap : MonoBehaviour{
 
     private bool isDead = false;
     private Rigidbody2D rb2b;
-    private Animation anim;
+    private Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         rb2b = GetComponent<Rigidbody2D> ();
-        anim = GetComponent<Animation>();
+        anim = GetComponent<Animator> ();
     }
 
     // Update is called once per frame
@@ -25,15 +25,16 @@ public class flap : MonoBehaviour{
             if (Input.GetMouseButtonDown(0))
             {
                 rb2b.velocity = Vector2.zero;
-                rb2b.AddForce(new Vector2(0, upForce));
-                anim.SetTarget
+                rb2b.AddForce (new Vector2 (0, upForce));
+                anim.SetTrigger ("Flap");
             }  
         }      
 
         
     }
-    void OnCollissionEnter2D ()
+    void OnCollisionEnter2D ()
     {
         isDead = true;
+        anim.SetTrigger("Die");
     }
 }
