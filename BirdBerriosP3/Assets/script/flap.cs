@@ -36,5 +36,6 @@ public class flap : MonoBehaviour{
     {
         isDead = true;
         anim.SetTrigger("Die");
+        GameControll.instance.BirdDied ();
     }
 }
