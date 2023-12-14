@@ -9,7 +9,8 @@ public class NewBehaviourScript : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        rb2d.velocity = new Vector2 (GameControll.instance.scrollSpeed), 0);
+        rb2d.velocity = new Vector2 (GameControll.instance.scrollSpeed, 0);
+
     }
 
     // Update is called once per frame
